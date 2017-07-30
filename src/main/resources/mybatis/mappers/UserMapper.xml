@@ -4,6 +4,6 @@
 <mapper namespace="com.ptp.usermanage.mapper.UserMapper">
 
 	<select id="queryUserList" resultType="User">
-		select * from ptp_base_user
+		select * from ptp_base_user order by insert_time desc
 	</select>
 </mapper>
