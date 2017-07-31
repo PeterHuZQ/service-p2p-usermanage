@@ -20,7 +20,7 @@
 	        <tr>
 	        	<th data-options="field:'ck',checkbox:true"></th>
 	        	<th data-options="field:'uuid',width:60">ID</th>
-	            <th data-options="field:'user_name',width:200">用户名</th>
+	            <th data-options="field:'userName',width:200">用户名</th>
 	            <th data-options="field:'name',width:100">姓名</th>
 	            <th data-options="field:'age',width:100">年龄</th>
 	            <th data-options="field:'sex',width:80,align:'right',formatter:formatSet">性别</th>

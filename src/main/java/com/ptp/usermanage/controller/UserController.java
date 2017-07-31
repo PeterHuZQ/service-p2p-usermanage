@@ -9,14 +9,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ptp.usermanage.bean.EasyUIResult;
+import com.ptp.usermanage.service.NewUserService;
 import com.ptp.usermanage.service.UserService;
 
 @RequestMapping("user")
 @Controller
 public class UserController {
     
+    /*@Autowired
+    private UserService userService;*/
+    
     @Autowired
-    private UserService userService;
+    private NewUserService userService;
     
     @RequestMapping(value = "list",method = RequestMethod.GET)
     @ResponseBody

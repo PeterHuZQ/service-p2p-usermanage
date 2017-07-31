@@ -2,12 +2,19 @@ package com.ptp.usermanage.pojo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name = "ptp_base_user")
 public class User {
 
+    @Id
     private String uuid;
 
     // 用户名
-    private String user_name;
+    @Column(name = "user_name")
+    private String userName;
 
     // 密码
     private String password;
@@ -42,14 +49,15 @@ public class User {
         this.uuid = uuid;
     }
 
-    public String getUser_name() {
-        return user_name;
+    
+    public String getUserName() {
+        return userName;
     }
 
 
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
 
@@ -140,7 +148,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [uuid=" + uuid + ", userName=" + user_name + ", password=" + password + ", name=" + name
+        return "User [uuid=" + uuid + ", userName=" + userName + ", password=" + password + ", name=" + name
                 + ", age=" + age + ", sex=" + sex + ", birthday=" + birthday + ", insert_time=" + insert_time
                 + ", update_time=" + update_time + "]";
     }
