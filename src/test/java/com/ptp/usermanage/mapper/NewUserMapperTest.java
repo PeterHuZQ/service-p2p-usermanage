@@ -85,7 +85,7 @@ public class NewUserMapperTest {
         record.setInsert_time(new Date());
         record.setUpdate_time(new Date());
         //将不为null的字段作为插入语句的字段
-        int count =this.newUserMapper.insert(record);
+        int count =this.newUserMapper.insertSelective(record);
         System.out.println(count);
     }
 

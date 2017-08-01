@@ -1,5 +1,6 @@
 package com.ptp.usermanage.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,29 @@ public class NewUserServiceImpl implements NewUserService{
         PageInfo<User> pageInfo=new PageInfo<User>(users);
         return new EasyUIResult(pageInfo.getTotal(), pageInfo.getList());
     }
+
+    @Override
+    public User queryUserById(String id) {
+        return this.newUserMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public void saveUser(User user) {
+        user.setInsert_time(new Date());
+        user.setUpdate_time(new Date());
+        this.newUserMapper.insertSelective(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+       this.newUserMapper.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public void deleteUserById(String id) {
+       this.newUserMapper.deleteByPrimaryKey(id);
+    }
+    
+    
     
 }
