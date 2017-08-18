@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div style="padding:10px 10px 10px 10px">
-	<form id="content" method="post">
+	<form id="content" method="post" enctype="application/x-www-form-urlencoded">
 	    <table cellpadding="5">
 	        <tr>
 	            <td>用户名:</td>
@@ -46,14 +46,14 @@
 			$.messager.alert('提示','表单还未填写完成!');
 			return ;
 		}
-		$.post("/user/save.action",$("#content").serialize(), function(data){
+		$.post("/rest/user/create",$("#content").serialize(), function(data){
 			if(data.status == 200){
-				$.messager.alert('提示','新增会员成功!');
+				$.messager.alert('提示','新增用户成功!');
 				$('#userAdd').window('close');
 				$("#userList").datagrid("reload");
 				clearForm();
 			}else{
-				$.messager.alert('提示','新增会员失败!');
+				$.messager.alert('提示','新增用户失败!');
 			}
 		});
 	}

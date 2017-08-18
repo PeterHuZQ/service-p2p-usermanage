@@ -132,7 +132,7 @@
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<configuration>
-					<port>8080</port>
+					<port>9080</port>
 					<!-- http://127.0.0.1:{port}/{path} -->
 					<path>/</path>
 				</configuration>

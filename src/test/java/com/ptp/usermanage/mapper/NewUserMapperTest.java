@@ -2,6 +2,7 @@ package com.ptp.usermanage.mapper;
 
 import static org.junit.Assert.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,12 +17,12 @@ import com.ptp.usermanage.pojo.User;
 
 public class NewUserMapperTest {
     
-    private NewUserMapper newUserMapper;
+    private UserMapper newUserMapper;
 
     @Before
     public void setUp() throws Exception {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
-        this.newUserMapper = applicationContext.getBean(NewUserMapper.class);
+        this.newUserMapper = applicationContext.getBean(UserMapper.class);
     }
 
     @Test
@@ -63,7 +64,11 @@ public class NewUserMapperTest {
         record.setPassword("123456");
         record.setSex(1);
         record.setAge(20);
-        record.setBirthday(new Date());
+        
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        Date date=new Date();
+        String birthday=sdf.format(date);
+        record.setBirthday(birthday);
         record.setInsert_time(new Date());
         record.setUpdate_time(new Date());
         //使用所有的字段作为插入语句的字段

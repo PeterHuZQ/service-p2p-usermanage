@@ -1,10 +1,9 @@
 package com.ptp.usermanage.mapper;
 
-import java.util.List;
-
+import com.github.abel533.mapper.Mapper;
 import com.ptp.usermanage.pojo.User;
 
-public interface UserMapper {
+public interface UserMapper extends Mapper<User>{
 
-    List<User> queryUserList();
+    
 }

@@ -29,7 +29,7 @@ public class User {
     private Integer sex;
 
     // 出生日期
-    private Date birthday;
+    private String birthday;
 
     // 创建时间
     private Date insert_time;
@@ -107,16 +107,15 @@ public class User {
     public void setSex(Integer sex) {
         this.sex = sex;
     }
-
-
-
-    public Date getBirthday() {
+    
+    
+    public String getBirthday() {
         return birthday;
     }
 
 
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
